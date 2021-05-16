@@ -40,3 +40,13 @@ services:
       - XPACK_MONITORING_ENABLED=true
     networks:
       - spring-elk-net
+  micro1-sb-elk:
+    image: cosdin/08-spring-elk:0.0.1-SNAPSHOT
+    container_name: micro-sb-elk
+    ports:
+      - "8080:8080"
+    restart: always
+#    environment:
+#      SERVICE_URL: http://micro2:5001
+    networks:
+      - spring-elk-net
