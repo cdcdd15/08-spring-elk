@@ -25,9 +25,9 @@ services:
       - ELASTICSEARCH_HOSTS=http://elastic-search:9200
     networks:
       - spring-elk-net
-  logstash:
+  logstash-service:
     image: logstash:7.10.1
-    container_name: cvl_logstash
+    container_name: 'logstash-service'
     restart: always
     ports:
       - 5000:5000
@@ -46,7 +46,8 @@ services:
     ports:
       - "8080:8080"
     restart: always
-#    environment:
-#      SERVICE_URL: http://micro2:5001
+    environment:
+      LOGSTASH_SERVICE_REMOTE_HOST: logstash-service
+      LOGSTASH_SERVICE_REMOTE_PORT: 5000
     networks:
       - spring-elk-net
