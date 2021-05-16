@@ -11,9 +11,10 @@ import com.cosmin.logs.StaticLogs;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
+@Slf4j
 @RequestMapping("/elk")
-public class EmployeeController {
-	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EmployeeController.class);
+public class ELKController {
+//	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ELKController.class);
 
 	@GetMapping("/hello")
 	public ResponseEntity<String> helloElk() {
