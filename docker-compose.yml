@@ -5,7 +5,7 @@ networks:
 services:
   elastic-search:
     image: elasticsearch:7.10.1
-    container_name: cvl_elasticsearch
+    container_name: 'elastic-search-service'
     restart: always
     ports:
       - 9200:9200
@@ -17,7 +17,7 @@ services:
       - spring-elk-net
   kibana:
     image: kibana:7.10.1
-    container_name: cvl_kibana
+    container_name: 'kibana-service'
     restart: always
     ports:
       - 5601:5601
@@ -30,7 +30,7 @@ services:
     container_name: 'logstash-service'
     restart: always
     ports:
-      - 5000:5000
+      - 5100:5100
       - 5044:5044
       - 9600:9600
     volumes:

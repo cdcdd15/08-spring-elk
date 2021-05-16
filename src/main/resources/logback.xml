@@ -14,7 +14,7 @@
 		<!-- <remoteHost>${LOGSTASH_SERVICE_REMOTE_HOST:logstash-service}</remoteHost> -->
 		
 		<!-- should be an env variable in production -->
-		<port>5000</port>
+		<port>5100</port>
 		<!-- <port>${LOGSTASH_SERVICE_REMOTE_PORT:5000}</port> -->
 
 		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
